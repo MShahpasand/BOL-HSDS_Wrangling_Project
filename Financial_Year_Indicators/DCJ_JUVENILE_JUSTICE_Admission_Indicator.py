@@ -37,7 +37,7 @@ def aggregate_to_FY(df_admissions):
   df_admissions=df_admissions[usecols]
   df_admissions=df_admissions.drop_duplicates()
   
-  df_admissions.to_csv(inputDir + 'jj_admissions_1011_1819_FY_indicator.csv', index=False)
+  df_admissions.to_csv(OutputDir + 'jj_admissions_1011_1819_FY_indicator.csv', index=False)
   
 
 if __name__ == '__main__':
