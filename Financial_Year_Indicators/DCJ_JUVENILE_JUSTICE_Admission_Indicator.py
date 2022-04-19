@@ -29,7 +29,7 @@ def aggregate_to_FY(df_admissions):
   years=list(range(11,20))
   usecols=['JJ_Adm_'+str(x-1)+str(x) for x in years]
   
-  #keep only the rows with atleast one flage for a financial year 
+  #keep only the rows with at least one flag for a financial year 
   df_admissions=df_admissions.loc[df_admissions[usecols]].sum(1)>0
   
   #keep only the columns needed and remove duplicates 
