@@ -30,7 +30,7 @@ def aggregate_to_FY(df_homelessness):
   years=list(range(15,20))
   usecols=['HS_'+str(x-1)+str(x) for x in years]
   
-  #keep only the rows with atleast one flage for a financial year 
+  #keep only the rows with at least one flag for a financial year 
   df_homelessness=df_homelessness.loc[df_homelessness[usecols]].sum(1)>0
   
   #keep only the columns needed and remove duplicates 
