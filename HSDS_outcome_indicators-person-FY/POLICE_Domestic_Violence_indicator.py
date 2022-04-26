@@ -26,7 +26,8 @@ def aggregate_to_person_FY(df_victims_sensitive,financial_year_start,financial_y
   # financial year is considered from 01-07-CurrentYear to 30-06-NextYear
   df_victims_sensitive['DV'] = df_victims_sensitive.Event_Reported_date.dt.to_period('Q-JUN').dt.qyear.apply(lambda x : str(x-1)[2:]+str(x)[2:])
   df_victims_sensitive = pd.get_dummies(df_victims_sensitive,columns=['DV'])
-  
+  df_victims_sensitive = df_victims_sensitive.reset_index()
+   
   #define a new naming for new columns
   years = list(range(int(financial_year_start[2:]),int(financial_year_end[2:])+1))
   usecols = ['DV_'+str(x-1)+str(x) for x in years]
